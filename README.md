@@ -19,7 +19,7 @@ If she's (or rather Indi's balls) has disappeared off your screen it is 1 of 3 p
 - Crashed
 - Hunger, thirst or happiness got too low.
 
-99% of the time she's disappeared off your screen due to the third reason. Check her stats from time to time and do the corresponding action to raise her moods. If they reach 0, she will leave. 
+99% of the time she's disappeared off your screen due to the third reason. Check her stats from time to time and do the corresponding action to raise her moods. If they reach 0, she will leave. You can toggle this on and off in the pet menu and then you can drag her all you want without worrying about her disappearing or worrying about hunger and thirst
 
 If she's gone and it was not due to a level dropping too low, please either open an issue or message me on a provided contact. Please provide details such as:
 
