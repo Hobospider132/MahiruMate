@@ -12,6 +12,7 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 - Can be dragged around the screen
 - Fixed intial response to food but random post responses
 - Hunger, thirst and happiness systems
+- Hunger, thirst and happiness can be toggled on and off
 
 # What are the plans for the future?
 The future plans include:
