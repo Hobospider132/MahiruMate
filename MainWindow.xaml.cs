@@ -1,4 +1,4 @@
-﻿using MahiruMate.Menu;
+using MahiruMate.Menu;
 using MahiruMate.Response;
 using MahiruMate.RandTalk;
 using System;
@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.Windows.Navigation;
+using MahiruMate.FoodMenu;
 
 namespace MahiruMate
 {
@@ -26,14 +28,14 @@ namespace MahiruMate
 
         private double x = 100;
 
-        private int walkDir = 1;           
-        private double walkSpeed = 120.0;  
+        private int walkDir = 1;
+        private double walkSpeed = 120.0;
 
         private string lastActiveWindow;
         private ResponseManager responseManager;
 
-        private double vy = 0.0;          
-        private const double gravity = 1500.0; 
+        private double vy = 0.0;
+        private const double gravity = 1500.0;
 
         private enum MahiruState { Idle, Walking, Dragging }
         private MahiruState state = MahiruState.Idle;
@@ -42,6 +44,7 @@ namespace MahiruMate
 
         private readonly SpeechViewModel viewModel = new();
         private readonly DispatcherTimer messageTimer = new();
+        private readonly DispatcherTimer moodTimer = new();
 
         private bool dragging = false;
         private bool dragMsgShown = false;
@@ -54,8 +57,14 @@ namespace MahiruMate
         private DateTime lastUpdate = DateTime.Now;
         private double timeAccumulator = 0.0;
         private const double MaxDeltaTime = 0.25;
+        private readonly Action _quitAction;
 
         private DispatcherTimer _currentHideTimer;
+
+        public int Happiness { get; set; } = 5;
+        public int Thirst { get; set; } = 5;
+        public int Hunger { get; set; } = 5;
+        public bool LookAfter { get; set; } = true;
 
         public MainWindow()
         {
@@ -65,8 +74,8 @@ namespace MahiruMate
             LoadFrames();
 
             responseManager = new ResponseManager(msg => Speak(msg));
-            var menuManager = new MenuManager(msg => Speak(msg), () => Application.Current.Shutdown());
-            MahiruImage.ContextMenu = menuManager.CreateMenu();
+            var menuManager = new MenuManager(msg => Speak(msg), () => Application.Current.Shutdown(), this);
+            MahiruImage.ContextMenu = menuManager.CreateMenu(this);
 
             Loaded += MainWindow_Loaded;
 
@@ -74,6 +83,10 @@ namespace MahiruMate
             messageTimer.Interval = TimeSpan.FromSeconds(random.Next(10, 120));
             messageTimer.Tick += (s, e) => RandMSG();
             messageTimer.Start();
+
+            moodTimer.Interval = TimeSpan.FromSeconds(random.Next(600, 1800));
+            moodTimer.Tick += (s, e) => RandDrop();
+            moodTimer.Start();
 
             MahiruImage.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
             MahiruImage.MouseLeftButtonUp += MainWindow_MouseLeftButtonUp;
@@ -132,6 +145,20 @@ namespace MahiruMate
             messageTimer.Interval = TimeSpan.FromSeconds(random.Next(30, 120));
         }
 
+        private void RandDrop()
+        {
+            if (random.Next(2) == 0 && LookAfter)
+            {
+                Hunger--;
+            }
+            else
+            {
+                Thirst--;
+            }
+            mood();
+            moodTimer.Interval = TimeSpan.FromSeconds(random.Next(600, 1800));
+        }
+
         private string GetActive()
         {
             const int nChars = 256;
@@ -145,7 +172,7 @@ namespace MahiruMate
         private void LoadFrames()
         {
 
-            // Waiting on animations, these are just test images taht will be switched out eventually
+            // Waiting on animations, these are just test images which will be switched out eventually
             walkFrames = new BitmapImage[]
             {
                 new BitmapImage(new Uri("Assets/indiballs.png", UriKind.Relative))
@@ -169,6 +196,27 @@ namespace MahiruMate
 
         }
 
+        private void mood()
+        {
+            string message = null;
+            if (Happiness == 0) message = "Hmph! I want to go home!";
+            else if (Hunger == 1) message = "Hey... I'm getting pretty hungry.\nI might go home soon if I don't get something to eat";
+            else if (Thirst == 1) message = "Hey... I'm getting pretty thirsty.\nI might go home soon if I don't get something to drink";
+            else if (Hunger == 0) message = "Hey. I'm getting hungry. I'll come back and play later ok?";
+            else if (Thirst == 0) message = "Hey. I'm getting thirsty. I'll come back and play later ok?";
+
+            if (message == null) return;
+
+            Speak(message);
+
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+            timer.Tick += (s, e) =>
+            {
+                timer.Stop();
+                Application.Current.Shutdown();
+            };
+            timer.Start();
+        }
         private void SetAnimation(MahiruState newstate)
         {
             if (state == newstate) return;
@@ -255,6 +303,11 @@ namespace MahiruMate
                 {
                     var dragmsg = DragMsg.DragMessages[random.Next(DragMsg.DragMessages.Length)];
                     Speak(dragmsg);
+                    if (LookAfter)
+                    {
+                        Happiness--;
+                        mood();
+                    }
                     dragMsgShown = true;
                 }
             }
