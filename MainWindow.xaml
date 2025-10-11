@@ -1,0 +1,41 @@
+﻿<Window x:Class="MahiruMate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MahiruMate"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ResizeMode="NoResize"
+        Width="500" Height="500"
+        ShowInTaskbar="False">
+
+    <Canvas x:Name="MahiruCanvas">
+
+        <Border x:Name="SpeechBubble"
+            Background="White"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="10"
+            Padding="10"
+            Visibility="Hidden">
+
+            <TextBlock x:Name="SpeechText"
+                       FontSize="16"
+                       Foreground="Black"
+                       MaxWidth="350"
+                       Text="{Binding Message}"
+                       TextWrapping="Wrap"/>
+        </Border>
+
+        <Image x:Name="MahiruImage" 
+               Width="128" 
+               Height="150" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Bottom" 
+               AutomationProperties.Name="Mahiru Desktop Pet" Canvas.Left="1" RenderTransformOrigin="0.505,-0.008"/>
+    </Canvas>
+</Window>
