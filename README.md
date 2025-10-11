@@ -1,5 +1,5 @@
 # Download link
-## [You can download it directly here] (https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe) Note: This is a WINDOWS only program
+## [You can download it directly here] (https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe) Note: This is a WINDOWS only program. Also, please read the README fully. There's no technical jargon and it will answer a lot of potential questions
 <br><br>
 However, if you wish to build please use the following build command after navigating to the route directory:
 <br>```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
