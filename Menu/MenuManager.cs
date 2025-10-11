@@ -1,6 +1,7 @@
 using MahiruMate.FoodMenu;
 using MahiruMate.Fun;
 using MahiruMate.RandTalk;
+using Microsoft.VisualBasic;
 using System;
 using System.Numerics;
 using System.Windows;
@@ -16,11 +17,13 @@ namespace MahiruMate.Menu
         private readonly Action<string> _speakAction;
         private readonly Action _quitAction;
         private MenuItem? _pongMenuItem;
+        private readonly MainWindow _mainWindow;
 
-        public MenuManager(Action<string> speakAction, Action quitAction)
+        public MenuManager(Action<string> speakAction, Action quitAction, MainWindow window)
         {
             _speakAction = speakAction;
             _quitAction = quitAction;
+            _mainWindow = window;
         }
 
         private void HandleGame(bool playerWon)
@@ -81,6 +84,7 @@ namespace MahiruMate.Menu
             var chatItem = new MenuItem { Header = "Chat" };
             var goodbyeItem = new MenuItem { Header = "Goodbye!" };
             var msgItem = new MenuItem { Header = "Where's Mahiru?" };
+            var lookAfterToggle = new MenuItem { Header = "Toggle mood drops" };
 
             var foodManager = new FoodManager(_speakAction, mainWindow);
             var foodItems = foodManager.CreateFoodItems();
@@ -108,6 +112,8 @@ namespace MahiruMate.Menu
             foreach (var stats in statsItems)
                 statsItem.Items.Add(stats);
 
+            // menu is starting to get crowded, may rework it at a later date
+
             menu.Items.Add(feedItem);
             menu.Items.Add(new Separator());
             menu.Items.Add(giftItem);
@@ -117,6 +123,8 @@ namespace MahiruMate.Menu
             menu.Items.Add(statsItem);
             menu.Items.Add(new Separator());
             menu.Items.Add(pongItem);
+            menu.Items.Add(new Separator());
+            menu.Items.Add(lookAfterToggle);
             menu.Items.Add(new Separator());
             menu.Items.Add(chatItem);
             menu.Items.Add(new Separator());
@@ -129,7 +137,19 @@ namespace MahiruMate.Menu
             chatItem.Click += (s, e) => randSay();
             goodbyeItem.Click += (s, e) => Goodbye();
             msgItem.Click += (s, e) => _speakAction("Hi, Sorry, Mahiru isn't here right now. I don't have the animations yet so please enjoy IndiBalls\n- Hobo");
-
+            lookAfterToggle.Click += (s, e) =>
+            {
+                if (_mainWindow.LookAfter)
+                {
+                    _speakAction("My mood will not drop");
+                    _mainWindow.LookAfter = false;
+                }
+                else
+                {
+                    _speakAction("My mood will now drop");
+                    _mainWindow.LookAfter = true;
+                }
+            };
             return menu;
         }
     }
