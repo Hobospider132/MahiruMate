@@ -1,5 +1,5 @@
 # Download link
-## [You can download it directly here](https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe) Note: This is a WINDOWS only program. Also, please read the README fully. There's no technical jargon and it will answer a lot of potential questions
+## [You can download it directly here](https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe) Note: This is a WINDOWS only program. Also, please read the README fully. There's no technical jargon and it will answer a lot of potential questions, sorry there is so much though, I am an overthinker and a yapper so please bear with me 🙏
 <br><br>
 However, if you wish to build please use the following build command after navigating to the route directory:
 <br>```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
@@ -26,6 +26,9 @@ If she's gone and it was not due to a level dropping too low, please either open
 - Your specific operating system (Windows 7, Windows 10, Windows 11, etc)
 - What you were doing when she disappeared
 - What your system specifications are
+
+# I'm a little worried, a single standalone exe? 
+I did this to make the program easier to use for those who are not as technically capable. The exe installs nor downloads ***ANYTHING*** to the users computer. It is fully portable amd lightweight
 
 # What does it do currently?
 - Can play pong
