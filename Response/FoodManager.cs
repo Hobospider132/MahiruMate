@@ -1,14 +1,8 @@
 using MahiruMate.RandTalk;
-using System;
-using System.Collections.Generic;
-using System.Security.AccessControl;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using System.Xml;
 
 namespace MahiruMate.FoodMenu
 {
