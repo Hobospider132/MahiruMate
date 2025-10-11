@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace MahiruMate.Response
 {
     public class ResponseManager
