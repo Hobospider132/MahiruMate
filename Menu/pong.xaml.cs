@@ -19,7 +19,6 @@ namespace MahiruMate.Fun
         private const int MaxScore = 3;
 
         private readonly Random rnd = new Random();
-        private const double AITolerance = 7.0;
         private const double MaxAISpeed = 10.0;
 
         private readonly Action<bool> _gameEnded;
@@ -193,4 +192,5 @@ namespace MahiruMate.Fun
             Canvas.SetTop(AIPaddle, aiY);
         }
     }
+
 }
