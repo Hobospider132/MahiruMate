@@ -1,7 +1,7 @@
 # Download link
 [You can download it directly here](https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe)
-However, if you wish to build please use the following build command after navigating to the route directory:
-```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
+<br>However, if you wish to build please use the following build command after navigating to the route directory:
+<br>```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
 
 # Where's Mahiru?
 I'm still waiting on the animations so in the meantime, I've included an image of Indi's balls instead.
