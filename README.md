@@ -1,5 +1,5 @@
 # Download link
-## [You can download it directly here](https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe)
+## [You can download it directly here] (https://github.com/Hobospider132/MahiruMate/releases/download/beta-2/MahiruMate-beta-2.2.exe) Note: This is a WINDOWS only program
 <br><br>
 However, if you wish to build please use the following build command after navigating to the route directory:
 <br>```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
@@ -12,6 +12,20 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 </br><a href="https://x.com/Hobospider132">Twitter</a>
 </br><a href="https://www.discord.com/users/649892152398315540">Discord</a>
 </br>I'm also mainly active in this <a href="https://discord.gg/otonari">discord server</a> if you wish to reach me here.
+
+# Ok, I meant where's Mahiru as in she disappeared off my screen
+If she's (or rather Indi's balls) has disappeared off your screen it is 1 of 3 possibilities. 
+- Bug
+- Crashed
+- Hunger, thirst or happiness got too low.
+
+99% of the time she's disappeared off your screen due to the third reason. Check her stats from time to time and do the corresponding action to raise her moods. If they reach 0, she will leave. 
+
+If she's gone and it was not due to a level dropping too low, please either open an issue or message me on a provided contact. Please provide details such as:
+
+- Your operating system
+- What you were doing when she disappeared
+- What your system specifications are
 
 # What does it do currently?
 - Can play pong
