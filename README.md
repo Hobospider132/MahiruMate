@@ -14,7 +14,7 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 </br>I'm also mainly active in this <a href="https://discord.gg/otonari">discord server</a> if you wish to reach me here.
 
 # Ok, I meant where's Mahiru as in she disappeared off my screen
-If she's (or rather Indi's balls) has disappeared off your screen it is 1 of 3 possibilities. 
+If she (or rather Indi's balls) has disappeared off your screen it is 1 of 3 possibilities. 
 - Bug
 - Crashed
 - Hunger, thirst or happiness got too low.
