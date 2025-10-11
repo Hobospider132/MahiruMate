@@ -1,4 +1,4 @@
-﻿<Window x:Class="MahiruMate.MainWindow"
+<Window x:Class="MahiruMate.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -36,6 +36,15 @@
                Height="150" 
                HorizontalAlignment="Left" 
                VerticalAlignment="Bottom" 
-               AutomationProperties.Name="Mahiru Desktop Pet" Canvas.Left="1" RenderTransformOrigin="0.505,-0.008"/>
+               AutomationProperties.Name="Mahiru Desktop Pet" 
+               Canvas.Left="1" 
+               RenderTransformOrigin="0.505,-0.008"/>
+
+        <Image x:Name="StatImage"
+       Width="64" Height="64"
+       Canvas.Left="218"
+       Canvas.Top="150"
+       HorizontalAlignment ="Center"
+       VerticalAlignment="Top"/>
     </Canvas>
 </Window>
