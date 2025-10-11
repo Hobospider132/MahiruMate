@@ -23,7 +23,7 @@ If she (or rather Indi's balls) has disappeared off your screen it is 1 of 3 pos
 
 If she's gone and it was not due to a level dropping too low, please either open an issue or message me on a provided contact. Please provide details such as:
 
-- Your operating system
+- Your specific operating system (Windows 7, Windows 10, Windows 11, etc)
 - What you were doing when she disappeared
 - What your system specifications are
 
