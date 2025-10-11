@@ -5,6 +5,13 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 </br><a href="https://www.discord.com/users/649892152398315540">Discord</a>
 </br>I'm also mainly active in this <a href="https://discord.gg/otonari">discord server</a> if you wish to reach me here.
 
+# What does it do currently?
+- Can play pong
+- Walks randomly
+- Has random dialogue
+- Can be dragged around the screen
+- Fixed intial response to food but random post responses
+
 # What are the plans for the future?
 The future plans include:
 - Hunger, thirst and happiness systems
@@ -15,9 +22,7 @@ Open to suggestions as well so please message me ideas. I will consider them all
 
 # Demo:
 
-Main features showcase: 
-https://github.com/user-attachments/assets/a8f586fb-70a9-4562-9656-c658dd4d5ed3
+Main features showcase: <video src="https://github.com/user-attachments/assets/a8f586fb-70a9-4562-9656-c658dd4d5ed3"></video>
 
-Movement showcase:
-https://github.com/user-attachments/assets/3e679d94-6eff-4798-ad37-1cef56d06fa7
+Movement showcase: <video src="https://github.com/user-attachments/assets/7abdf991-2c8d-437d-9a51-1a54bfcf6564"></video>
 
