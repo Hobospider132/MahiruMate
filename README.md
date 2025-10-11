@@ -11,10 +11,10 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 - Has random dialogue
 - Can be dragged around the screen
 - Fixed intial response to food but random post responses
+- Hunger, thirst and happiness systems
 
 # What are the plans for the future?
 The future plans include:
-- Hunger, thirst and happiness systems
 - Further dialogue
 - Proper animations for idling, walking and dragging
 
@@ -26,3 +26,5 @@ Main features showcase: <video src="https://github.com/user-attachments/assets/a
 
 Movement showcase: <video src="https://github.com/user-attachments/assets/7abdf991-2c8d-437d-9a51-1a54bfcf6564"></video>
 
+More features are inside, not everything has been included in the demo. Demo is also based on the first beta release.
+I have not been bothered to record further videos. This is just to give a general idea of what to expect
