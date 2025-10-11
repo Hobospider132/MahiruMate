@@ -18,8 +18,14 @@ This is a beta currently so please let me know if you encounter bugs. My email i
 The future plans include:
 - Further dialogue
 - Proper animations for idling, walking and dragging
+- Menu optimisation
 
 Open to suggestions as well so please message me ideas. I will consider them all.
+
+# I love Indi's balls. What will happen to his balls after animations are made?
+Don't worry, I will be releasing an alternative version of each release where Indi's balls will be the pet.
+However, there will be ***NO*** animations for that version, it will ***PURELY*** be the same image seen
+in these beta releases
 
 # Demo:
 
