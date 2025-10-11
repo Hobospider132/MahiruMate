@@ -35,6 +35,11 @@ Don't worry, I will be releasing an alternative version of each release where In
 However, there will be ***NO*** animations for that version, it will ***PURELY*** be the same image seen
 in these beta releases
 
+# I hate feature creep, will this succumb to feature creep? Oh please tell me there won't be any feature creep
+
+Relax, if I stay locked in (unlikely) and if I stick to the set plan (maybe likely) the project will never succumb to feature creep. I have already ensured that technical debt will not accumulate and previously refactored the code for readability and ease of modificaton. Feature creep will (most likely) not be an issue
+
+
 # Demo:
 
 Main features showcase: <video src="https://github.com/user-attachments/assets/a8f586fb-70a9-4562-9656-c658dd4d5ed3"></video>
