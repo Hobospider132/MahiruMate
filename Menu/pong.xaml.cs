@@ -17,16 +17,18 @@ namespace MahiruMate.Fun
         private int playerScore = 0;
         private int aiScore = 0;
         private const int MaxScore = 3;
+        private MainWindow _mainWindow;
 
         private readonly Random rnd = new Random();
         private const double MaxAISpeed = 10.0;
 
         private readonly Action<bool> _gameEnded;
 
-        public PongWindow(Action<string> speakAction, Action<bool> gameEnded)
+        public PongWindow(Action<string> speakAction, Action<bool> gameEnded, MainWindow window)
         {
             InitializeComponent();
             _gameEnded = gameEnded;
+            _mainWindow = window;
 
             playerY = GameCanvas.Height / 2 - PlayerPaddle.Height / 2;
             aiY = GameCanvas.Height / 2 - AIPaddle.Height / 2;
@@ -46,7 +48,7 @@ namespace MahiruMate.Fun
             this.KeyUp += PongWindow_KeyUp;
         }
 
-        public PongWindow() : this(_ => { }, _ => { }) { }
+        public PongWindow() : this(_ => { }, _ => { }, null) { }
 
         private void PongWindow_KeyDown(object sender, KeyEventArgs e)
         {
@@ -160,6 +162,7 @@ namespace MahiruMate.Fun
             if (playerScore >= MaxScore || aiScore >= MaxScore)
             {
                 bool playerWon = playerScore >= MaxScore;
+                if (_mainWindow.Happiness < 5) _mainWindow.Happiness++;
                 timer.Stop();
                 _gameEnded(playerWon);
 
@@ -192,5 +195,4 @@ namespace MahiruMate.Fun
             Canvas.SetTop(AIPaddle, aiY);
         }
     }
-
 }
