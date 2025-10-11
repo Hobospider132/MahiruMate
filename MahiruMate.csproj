@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -9,11 +9,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\happiness\happiness1.png" />
+    <None Remove="Assets\happiness\happiness2.png" />
+    <None Remove="Assets\happiness\happiness3.png" />
+    <None Remove="Assets\happiness\happiness4.png" />
+    <None Remove="Assets\happiness\happiness5.png" />
+    <None Remove="Assets\hunger\hunger1.png" />
+    <None Remove="Assets\hunger\hunger2.png" />
+    <None Remove="Assets\hunger\hunger3.png" />
+    <None Remove="Assets\hunger\hunger4.png" />
+    <None Remove="Assets\hunger\hunger5.png" />
     <None Remove="Assets\indiballs.png" />
+    <None Remove="Assets\thirst\thirst1.png" />
+    <None Remove="Assets\thirst\thirst2.png" />
+    <None Remove="Assets\thirst\thirst3.png" />
+    <None Remove="Assets\thirst\thirst4.png" />
+    <None Remove="Assets\thirst\thirst5.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\happiness\happiness1.png" />
+    <Resource Include="Assets\happiness\happiness2.png" />
+    <Resource Include="Assets\happiness\happiness3.png" />
+    <Resource Include="Assets\happiness\happiness4.png" />
+    <Resource Include="Assets\happiness\happiness5.png" />
+    <Resource Include="Assets\hunger\hunger1.png" />
+    <Resource Include="Assets\hunger\hunger2.png" />
+    <Resource Include="Assets\hunger\hunger4.png" />
+    <Resource Include="Assets\hunger\hunger5.png" />
     <Resource Include="Assets\indiballs.png" />
+    <Resource Include="Assets\thirst\thirst1.png" />
+    <Resource Include="Assets\thirst\thirst3.png" />
+    <Resource Include="Assets\thirst\thirst4.png" />
+    <Resource Include="Assets\thirst\thirst5.png" />
   </ItemGroup>
 
 </Project>
