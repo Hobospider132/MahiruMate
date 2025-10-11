@@ -1,12 +1,7 @@
 using MahiruMate.FoodMenu;
 using MahiruMate.Fun;
 using MahiruMate.RandTalk;
-using Microsoft.VisualBasic;
-using System;
-using System.Numerics;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace MahiruMate.Menu
@@ -111,8 +106,6 @@ namespace MahiruMate.Menu
             var statsItems = statsManager.CreateStatItems();
             foreach (var stats in statsItems)
                 statsItem.Items.Add(stats);
-
-            // menu is starting to get crowded, may rework it at a later date
 
             menu.Items.Add(feedItem);
             menu.Items.Add(new Separator());
