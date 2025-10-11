@@ -4,7 +4,7 @@
 However, if you wish to build please use the following build command after navigating to the route directory:
 <br>```dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=None /p:IncludeNativeLibrariesForSelfExtract=true /p:EnableCompressionInSingleFile=true```
 <br>Next navigate to ```MahiruMate-main\MahiruMate-main\bin\Release\net8.0-windows\win-x64\publish``` where you should find the built version
-<br>You will need .NET 8.0 to build
+<br>You will need .NET 8.0 Windows to build it as this is a WPF
 
 # Where's Mahiru?
 I'm still waiting on the animations so in the meantime, I've included an image of Indi's balls instead.
