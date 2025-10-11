@@ -137,9 +137,12 @@ namespace MahiruMate
 
         private void RandMSG()
         {
-            var msg = rdmMsg.Messages[random.Next(rdmMsg.Messages.Length)];
-            Speak(msg);
-            messageTimer.Interval = TimeSpan.FromSeconds(random.Next(30, 120));
+            if (Hunger != 0 || Thirst != 0 || Happiness != 0)
+            {
+                var msg = rdmMsg.Messages[random.Next(rdmMsg.Messages.Length)];
+                Speak(msg);
+                messageTimer.Interval = TimeSpan.FromSeconds(random.Next(30, 120));
+            }
         }
 
         private void RandDrop()
@@ -197,6 +200,7 @@ namespace MahiruMate
         {
             string message = null;
             if (Happiness == 0) message = "Hmph! I want to go home!";
+            else if (Happiness == 1) message = "Hey! I'm getting pretty unhappy!\nIf you annoy me one more time I'll go home!";
             else if (Hunger == 1) message = "Hey... I'm getting pretty hungry.\nI might go home soon if I don't get something to eat";
             else if (Thirst == 1) message = "Hey... I'm getting pretty thirsty.\nI might go home soon if I don't get something to drink";
             else if (Hunger == 0) message = "Hey. I'm getting hungry. I'll come back and play later ok?";
