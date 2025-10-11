@@ -42,6 +42,26 @@ namespace MahiruMate.RandTalk
         };
     }
 
+    public static class DrinkMsg
+    {
+        public static readonly string[] DrinkMessages =
+        {
+            "Mhmm, that was nice",
+            "I should've saved some for Amane-Kun :(",
+            "Much better now",
+        };
+    }
+
+
+    public static class GiftMsg
+    {
+        public static readonly string[] GiftMessages =
+        {
+            "Next time I'll get you a gift",
+            "Maybe I should get one for Amane-Kun too...",
+        };
+    }
+
     public static class DragMsg
     {
         public static readonly string[] DragMessages =
