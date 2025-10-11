@@ -1,9 +1,9 @@
 # Where's Mahiru?
 I'm still waiting on the animations so in the meantime, I've included an image of Indi's balls instead.
 This is a beta currently so please let me know if you encounter bugs. My email is Hobospider132@gmail.com
-<a href="https://x.com/Hobospider132">Twitter</a>
-<a href="https://www.discord.com/users/649892152398315540">Discord</a>
-I'm also mainly active in this <a href="https://discord.gg/otonari>discord server</a> if you wish to reach me here.
+</br><a href="https://x.com/Hobospider132">Twitter</a>
+</br><a href="https://www.discord.com/users/649892152398315540">Discord</a>
+</br>I'm also mainly active in this <a href="https://discord.gg/otonari">discord server</a> if you wish to reach me here.
 
 # What are the plans for the future?
 The future plans include:
