@@ -42,7 +42,8 @@ I did this to make the program easier to use for those who are not as technicall
 # What are the plans for the future?
 The future plans include:
 - Further dialogue
-- Proper animations for idling, walking and dragging
+- ~~Proper animations for idling, walking and dragging~~
+- May use 3D models instead for the animations rather than pixel art ones
 - Menu optimisation
 
 Open to suggestions as well so please message me ideas. I will consider them all.
