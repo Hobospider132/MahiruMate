@@ -198,26 +198,37 @@ namespace MahiruMate
 
         private void mood()
         {
-            string message = null;
-            if (Happiness == 0) message = "Hmph! I want to go home!";
-            else if (Happiness == 1) message = "Hey! I'm getting pretty unhappy!\nIf you annoy me one more time I'll go home!";
-            else if (Hunger == 1) message = "Hey... I'm getting pretty hungry.\nI might go home soon if I don't get something to eat";
-            else if (Thirst == 1) message = "Hey... I'm getting pretty thirsty.\nI might go home soon if I don't get something to drink";
-            else if (Hunger == 0) message = "Hey. I'm getting hungry. I'll come back and play later ok?";
-            else if (Thirst == 0) message = "Hey. I'm getting thirsty. I'll come back and play later ok?";
+            (string message, bool shouldShutdown) = (Happiness, Hunger, Thirst) switch
+            {
+                (0, _, _) => ("Hmph! I want to go home!", true),
+                (1, _, _) => ("Hey! I'm getting pretty unhappy!\nIf you annoy me one more time I'll go home!", false),
 
-            if (message == null) return;
+                (_, 0, _) => ("Hey. I'm getting hungry. I'll come back and play later ok?", true),
+                (_, 1, _) => ("Hey... I'm getting pretty hungry.\nI might go home soon if I don't get something to eat", false),
+
+                (_, _, 0) => ("Hey. I'm getting thirsty. I'll come back and play later ok?", true),
+                (_, _, 1) => ("Hey... I'm getting pretty thirsty.\nI might go home soon if I don't get something to drink", false),
+
+                _ => (null, false)
+            };
+
+            if (message == null)
+                return;
 
             Speak(message);
 
-            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
-            timer.Tick += (s, e) =>
+            if (shouldShutdown)
             {
-                timer.Stop();
-                Application.Current.Shutdown();
-            };
-            timer.Start();
+                var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+                timer.Tick += (s, e) =>
+                {
+                    timer.Stop();
+                    Application.Current.Shutdown();
+                };
+                timer.Start();
+            }
         }
+        
         private void SetAnimation(MahiruState newstate)
         {
             if (state == newstate) return;
@@ -401,3 +412,4 @@ namespace MahiruMate
         }
     }
 }
+
